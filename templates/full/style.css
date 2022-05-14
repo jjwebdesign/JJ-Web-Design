@@ -1,0 +1,231 @@
+/* 
+JJWebDesign
+ * /  .\   *
+ * /  =__| * 
+ * /    || *
+ * * * * * *  
+ */
+
+html {
+
+    margin: 0;
+}
+
+body{
+
+    margin: 0;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    background-image: radial-gradient(circle at center, rgba(135, 135, 255, 0.3) 0, rgba(255, 200, 200, 0.2), rgb(254, 220, 255) 100%);
+    overflow-x: hidden;
+
+}
+
+#websiteBuilderMenu {
+
+    background-color: white;
+    color: black;
+    border: 2px solid rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 550px;
+    height: 400px;
+    cursor: grab;
+    z-index: 2;
+    overflow: hidden;
+
+    transition: height ease 0.4s, width ease 0.4s;
+}
+
+.websiteBuilderMenuTopMenu {
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+
+    top: 0;
+    width: 100%;
+    height: 35px;
+    background-color: rgb(145, 145, 145);
+}
+
+.websiteBuilderMenuTopMenuClose {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    margin-right: 10px;
+    width: 50px;
+    height: 25px;
+    background-color: rgb(255, 85, 85);
+    border: 1px solid black;
+    font-size: 25px;
+
+    transition: background-color ease 0.4s;
+}
+
+.websiteBuilderMenuTopMenuClose:hover {
+
+    background-color: rgb(255, 155, 155);
+    cursor: pointer;
+}
+
+#menuHeader {
+
+    text-align: center;
+    margin: 20px 0 0 0;
+}
+
+
+#colorSelectContainer {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    width: 100%;
+    height: 200px;
+}
+
+.colorSelectLabel {
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    position: relative;
+
+    width: 25%;
+    height: 100%;
+
+}
+
+.colorSelect {
+
+    position: relative;
+    width: 90px;
+    height: 90px;
+
+    margin: 0 20px;
+}
+
+.themeSelectContainer {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    width: 100%;
+    height: 75px;
+}
+
+.themeSelect {
+
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin: 20px 0;
+
+}
+
+#navBar {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    margin: 0 auto;
+
+    background-color: white;
+    transition: opacity ease 0.7s, height ease 0.4s;
+
+}
+
+#navBar a { 
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    width: 33.33%;
+
+    text-decoration: none;
+    border: 1px solid black;
+    color: black;
+
+}
+
+#navBar a:hover { 
+
+    background-color: rgba(204, 204, 204, 0.6);
+    color: black;
+}
+
+#navBar a:visited { 
+
+    color: black;
+
+}
+
+#navBar a:visited:hover { 
+
+    background-color: rgba(204, 204, 204, 0.6);
+    color: black;
+
+}
+
+#top {
+
+    margin: 0;
+}
+
+.header {
+
+    text-align: center;
+    width: 100%;
+    margin: 1% 0;
+}
+
+#footer {
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    height: 170px;
+    width: 100%;
+    margin-top: 10px;
+    background-color: white;
+    border-bottom: 3px solid black;
+
+}
+
+.footerContents {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 70%;
+    margin-top: 30px;
+
+}
+
+.footerContentsItem {
+
+    margin: 0 5%;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&display=swap" rel="stylesheet"> 
+    <title>Standard Webpage Template</title>
+</head>
+
+<body onload="loadSite()" onscroll="navBarChange()">
+
+    <div id="navBar">
+        <a href="#">About</a>
+        <a href="#servicesShortcut">Services</a>
+        <a href="#contactShortcut">Contact</a>
+    </div>
+
+    <div id="top"></div>
+    <div class="mainCanvas" id="mainCVS">
+
+        <div class="infoCanvas" id="about">
+            <div class="info">
+                <h1 class="header">About</h1>
+                <hr style="color: red;">
+            </div>
+        </div>
+        <a id="servicesShortcut"></a>
+
+        <div class="infoCanvas" id="services">
+            <div class="info">
+                <h1 class="header">Services</h1>
+                <hr style="color: yellow;">
+
+            </div>
+        </div>
+
+        <a id="contactShortcut"></a>
+        <div class="infoCanvas" id="contact">
+            <div class="info">
+                <h1 class="header">Contact</h1>
+                <hr style="color: green;">
+
+            </div>
+        </div>
+
+        <div class="infoCanvas" id="orderSite1">
+            <div class="info">
+                <h1 class="header">Book</h1>
+                <hr style="color: blue;">
+
+            </div>
+        </div>
+        <div class="infoCanvas" id="footer" > 
+
+            <div class="info" style="margin-top: 2%;">
+                <h1 class="header">Footer</h1>
+                <hr style="color: purple;">
+            </div>
+
+            <div class="linkStrip">
+                <!-- GitHub icon credit -->
+                <!--<a target="_blank" href="https://icons8.com/icon/3tC9EQumUAuq/github">GitHub</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>-->
+                <div class="footerItem"><a href="#" style="width: 44px; height: 44px;"><img src="img/github-Icon.png" alt="GitHub-Icon"></a></div>
+
+                <!-- LinkedIn icon credit -->
+                <!-- <a target="_blank" href="https://icons8.com/icon/60444/linkedin-circled">LinkedIn Circled</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
+                <div class="footerItem"><a href="#"><img src="img/linkedIn-Icon.png" alt="GitHub-Icon"></a></div>
+
+                <!-- Facebook icon credit -->
+                <!-- <a target="_blank" href="https://icons8.com/icon/118467/facebook">Facebook</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
+                <div class="footerItem"><a href="#"><img src="img/facebook-Icon.png" alt="GitHub-Icon"></a></div>
+            </div>
+        </div>
+    </div>
+    <script src="../../script/navBarScript.js"></script>
+    <script>
+        function loadSite() {
+
+            setTimeout(() => {
+
+                document.getElementById(`about`).style.height = `30%`;
+
+                document.getElementById(`services`).style.height = `50%`;
+
+                document.getElementById(`contact`).style.height = `30%`;
+
+                document.getElementById(`orderSite1`).style.height = `50%`;
+
+                document.getElementById(`footer`).style.height = `40%`;
+
+                document.getElementById(`about`).style.width = `100%`;
+
+                document.getElementById(`services`).style.width = `100%`;
+
+                document.getElementById(`contact`).style.width = `100%`;
+
+                document.getElementById(`orderSite1`).style.width = `100%`;
+
+                document.getElementById(`footer`).style.width = `100%`;
+                
+            }, 300);
+        }
+
+    </script>
+</body>
+</html>

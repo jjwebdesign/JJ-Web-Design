@@ -1,0 +1,217 @@
+<!-- 
+JJWebDesign
+* /  .\   *
+* /  =__| * 
+* /    || *
+* * * * * *
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet"> 
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&display=swap" rel="stylesheet"> 
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"> </script>
+     <style>
+ 
+         .contactInfoContainer {
+ 
+             display: flex;
+             align-items: center;
+             justify-content: flex-start;
+             flex-direction: column;
+ 
+             margin: 0 auto;
+             text-align: center;
+ 
+             width: 100%;
+             height: 1200px;
+ 
+         }
+
+         .contactInfoItem {
+             
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            width: 100%;
+            height: 50%;
+
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+         }
+
+         .contactInfoItem a {
+
+            color: black;
+            text-decoration: none;
+
+         }
+
+         .contactInfoItem a:hover {
+
+            color: rgb(38, 38, 38);
+            text-decoration: underline;
+
+         }
+
+         #inquiryTextbox {
+
+            width: 50%;
+            height: 200px;
+            padding: 0 20px;
+            resize: none;
+
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            font-size: 20px;
+            text-align: center;
+
+            scrollbar-color: rgba(86, 86, 86, 0.4) rgba(255,255,255, 0);
+            scrollbar-width: thin;
+
+            transition: border-radius ease 0.4s, width ease 0.4s;
+
+         }
+
+         #inquiryTextbox:hover {
+
+            border-radius: 2px;
+            width: 52%;
+
+        }
+
+         .emailInputContainer {
+
+            text-align: center;
+            width: 100%;
+            height: 40px;
+
+            margin: 50px 0;
+
+         }
+
+         #emailInput {
+
+            width: 30%;
+            height: 100%;
+
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(0, 0, 0, 0.3);
+
+            border-radius: 10px;
+            padding-left: 10px;
+         }
+
+         #sendMessageButton {
+
+            width: 30%;
+            height: 75px;
+
+            background-color: rgba(255, 255, 255, 0.5);
+            border: 2px solid rgba(0, 0, 0, 0.3);
+
+            border-radius: 10px;
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Montserrat', sans-serif;
+
+            transition: border-radius ease 0.4s, background-color ease 0.4s , width ease 0.4s;
+
+         }
+
+         #sendMessageButton:hover {
+
+            background-color: rgba(205, 205, 205, 0.3);
+            width: 30%;
+            border-radius: 5px;
+
+            cursor: pointer;
+         }
+
+ 
+ 
+         @media only screen and (max-width: 700px) {
+ 
+            #inquiryTextbox {
+
+                width: 80%;
+            }
+
+            #inquiryTextbox:hover {
+
+                width: 85%;
+            }
+
+            #sendMessageButton {
+
+                width: 80%;
+            }
+
+            #sendMessageButton:hover {
+
+                width: 85%;
+            }
+ 
+         }
+ 
+     </style>
+     <title>JJ Web Design-Order-Confirmation</title>
+ </head>
+
+ <body onscroll="navBarChange()">
+
+    <div id ="top"></div>
+
+    <div id="navBar">
+        <a href="index.html" style="border-right: 0;">Home</a>
+        <a href="order.html" style="border-right: 0;">Order</a>
+        <a href="$">Contact</a>
+    </div>
+
+    <h1 class="header" style="margin: 2% 0;">Contact</h1>
+    <hr>
+    <div class="contactInfoContainer">
+
+        <div class="contactInfoItem">
+            <p>Leave any inquires and your email below and I will get back to you as soon as possible.</p>
+            <textarea  id="inquiryTextbox" maxlength="1000"></textarea>
+            <div class="emailInputContainer"><span><strong>Email: &nbsp;</strong></span><input type="email" id="emailInput"></div>
+            <input type="button" id="sendMessageButton" value="Send Message" onclick="sendMessage()">
+        </div>
+
+        <div class="contactInfoItem" style="border: 0;">
+
+            <h3 class="header" style="margin: 20px 0;">Personal Contact Information</h3>
+            <p style="margin-bottom: 45px;">Please <strong>only</strong> use my personal contact information for non-customer-service related inquires</p>
+            <p><strong>Personal Email: &nbsp;</strong>jjcharlinski@gmail.com</p>
+            <p><strong>LinkedIn: &nbsp;</strong><a href="https://www.linkedin.com/in/jasper-charlinski-02ab41238">Jasper Charlinski</a></p>
+            <p><strong>GitHub: &nbsp;</strong><a href="https://github.com/charlijj">charlijj</a></p>
+            <p><strong>Personal Website: &nbsp;</strong><a href="https://jaspercharlinski.com">jaspercharlinski.com</a></a></p>
+        </div>
+
+    </div>
+
+    <div id="footer">
+        <div class="footerContents">
+            <p class="footerContentsItem"><strong>Email: &nbsp;</strong>-------</p>
+            <p class="footerContentsItem"><strong>Phone: &nbsp;</strong>-------</p>
+            <p class="footerContentsItem"><strong>LinkedIn: &nbsp;</strong>-------</p>
+        </div>
+    </div>
+
+    <script src="script/inquiryScript.js"></script>
+    <script src="script/navBarScript.js"></script>
+
+ </body>
+ </html>

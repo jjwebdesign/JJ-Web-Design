@@ -1,0 +1,187 @@
+
+body {
+
+        margin: 0;
+        color: black;
+        font-family: 'Montserrat', sans-serif;
+        height: 100vh;
+    }
+
+    #navBar {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: sticky;
+        z-index: 1;
+        top: 0;
+        width: 100%;
+        height: 40px;
+        font-size: 20px;
+        margin: 0 auto;
+
+        background-color: white;
+        transition: opacity ease 0.7s, height ease 0.4s;
+    }
+
+    #navBar a { 
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 100%;
+        width: 33.33%;
+
+        color: black;
+        text-decoration: none;
+        border: 1px solid black;
+    }
+
+    #navBar a:hover { 
+
+        background-color: rgba(204, 204, 204, 0.6);
+        color: black;
+    }
+
+    #navBar a:visited { 
+
+        color: black;
+    }
+
+    #navBar a:visited:hover { 
+
+        background-color: rgba(204, 204, 204, 0.6);
+        color: black;
+    }
+
+    .header {
+
+        text-align: center;
+        width: 100%;
+        margin: 1% 0;
+    }
+
+    .mainCanvas {
+
+        width: 100%;
+        height: 100vh;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+
+    .infoCanvas {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin: 0 auto;
+
+        width: 20%;
+        height: 20%;
+
+        background-color: rgba(255, 255, 255, 0.3);
+        border-bottom: 5px solid rgba(0, 0, 0);
+        overflow: hidden;
+
+        transition: width ease 1s, height ease 2s;
+    }
+
+    .info {
+
+        width: 80%;
+        height: 90%;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        transition: border-radius ease 0.4s;
+    }
+
+
+
+    .info:hover {
+
+        background-color: rgba(251, 251, 251, 0.8);
+        border-radius: 20px;
+    }
+
+    #about {
+
+        margin-top: 0;
+        background-image: url(img/red-background.jpg);
+        background-position: center center;
+        background-size:cover;
+    }
+
+    #services {
+
+        background-image: url(img/yellow-background.jpg);
+        background-position: center center;
+        background-size:cover;
+    }
+
+    #contact {
+
+        background-image: url(img/green-background.jpg);
+        background-position: center center;
+        background-size:cover;
+    }
+
+    #orderSite1 {
+
+        background-image: url(img/blue-background.jpg);
+        background-position: center center;
+        background-size:cover;
+    }
+
+    #footer {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+
+        background-image: url(img/purple-background.jpg);
+        background-position: center center;
+        background-size:cover;
+    }
+
+    .linkStrip {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 80px;
+        width: 100%;
+        margin-top: 2%;
+        background-color: black;
+    }
+
+    .footerItem {
+
+        margin: 0 10%;
+        background-color: black;
+        border-radius: 21px;
+    }
+
+    .footerItem a {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 42px;
+        height: 42px;
+
+        margin: 0;
+    }
+
+    .footerItem a:hover {
+
+        background-color: white;
+        border-radius: 21px;
+    }

@@ -1,0 +1,640 @@
+<!-- 
+JJWebDesign
+* /  .\   *
+* /  =__| * 
+* /    || *
+* * * * * *
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&display=swap" rel="stylesheet"> 
+    <style>
+        .header {
+
+            text-align: center;
+            width: 100%;
+            margin: 1% 0;
+        }
+
+        /* --------------------------------------------------------- */
+
+        #headingCanvas {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+            height: 50vh;
+            margin: 0 auto;
+            text-align: center;
+
+            background-image: url(img/space-background.jpg);
+            background-position: center center;
+            transition: background-position ease 5s;
+            background-size:cover;
+        }
+
+        .banner {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 55%;
+            height: 65%;
+
+            background-color: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.8);
+            border-radius: 30px;
+
+        }
+
+        .websiteSaleLinkContainer {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 auto;
+
+            width: 100%;
+            height: 20vh;
+
+            background-color: white;
+            transition: height ease 2s;
+
+        }
+
+        .websiteSaleLink {
+
+            margin: 0;
+            height: 100%;
+            width: 100%;
+
+        }
+
+        .websiteSaleLink a {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: black;
+            text-decoration: none;
+            background-image: radial-gradient(circle at center, rgba(39, 39, 255, 0.1) 0, rgba(255, 80, 80, 0.1), rgba(252, 255, 2240.1) 100%);
+
+
+            height: 100%;
+            width: 100%;
+
+            border: 2px solid rgba(0, 0, 0, 0.8);
+            font-size: 65px;
+            font-family:'PT Serif', serif;
+
+            transition: background-color ease 0.5s;
+
+        }
+
+        .websiteSaleLink a:hover {
+
+            background-color: rgba(0, 0, 0, 0.2);}
+
+        /* --------------------------------------------------------------- */
+
+        .templateDisplayContainer {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: static;
+            overflow: hidden;
+
+            margin: 2% auto;
+
+            width: 100%;
+            height: 75%;
+
+            padding-bottom: 2%;
+
+        }
+
+        .templateDisplay {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0 2%;
+            padding: 2px;
+
+            box-shadow: inset 0 0 0 100vh rgba(0, 0, 0, 0.5);
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+
+            transition: border-radius ease 0.4s;
+
+
+        }
+
+        .templateDisplay:hover {
+
+            border-radius: 30px;
+        }
+
+        .templateDisplay a {
+
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            margin-bottom:40%;
+            transition: font-size ease 0.4s;
+        }
+
+        .templateDisplayLabels {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            flex-direction: column;
+
+            margin: 0 2%;
+            width: 30%;
+            height: 100%;
+            text-align: center;
+
+            transition: width ease 1s;
+
+        }
+
+        .templateDisplayLabels:hover {
+
+            width: 150%;
+            cursor: pointer;
+
+        }
+
+        .orderNowButtonContainer {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            flex-direction: column;
+
+            margin: 2% 0;
+            width: 100%;
+            height: 100px;
+
+        }
+
+        #orderNowButton {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin: 0;
+            width: 50%;
+            height: 100%;
+
+            border-radius: 30px;
+            background-color: rgba(0, 0, 0, 0.5);
+
+            transition: border-radius ease 0.5s, background-color ease 0.4s, width ease 1s;        
+        }
+
+        #orderNowButton:hover {
+
+            border-radius: 20px;
+            background-color: rgba(0, 0, 0, 0.4);
+            width: 70%;
+
+            cursor: pointer;
+        }
+
+        /* ------------------------------------------------------------------------------------ */
+
+        .domainOptionsContainer {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin: 0;
+            width: 100%;
+            height: 50%;
+        }
+
+        .domainOption {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            margin: 0;
+            width: 50%;
+            height: 70%;
+            margin: 5% 2%;
+            padding: 5px;
+
+            color: white;
+            border-radius: 25px;
+            font-size: 20px;
+
+            text-align: center;
+
+            background-color: rgba(0, 0, 0, 0.5);
+
+            transition: border-radius ease 0.3s, background-color ease 0.4s;
+
+
+        }
+
+        .domainOption:hover {
+
+            border-radius: 20px;
+            background-color: rgba(0, 0, 0, 0.4);
+
+        }
+
+        .hostingOptionsContainer {
+
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+
+            margin: 0;
+            width: 100%;
+            height: 30%;
+
+            border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+            padding-bottom: 2%;
+
+        }
+
+        .hostingOption {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            margin: 0;
+            width: 95%;
+            height: 80%;
+            margin: 0;
+            padding: 5px;
+            padding-bottom: 25px;
+
+            color: white;
+            border-radius: 25px;
+            font-size: 20px;
+
+            text-align: center;
+
+            background-color: rgba(0, 0, 0, 0.5);
+
+            transition: border-radius ease 0.3s, background-color ease 0.4s;
+
+        }
+
+        .hostingOption:hover {
+
+            border-radius: 20px;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        /* -------------------------------------------------------------------------------------*/
+
+        .aboutContainer {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin: 0;
+            width: 100%;
+            height: 40%;
+
+            border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+
+        }
+
+        .about {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            margin: 0;
+            width: 95%;
+            height: 80%;
+            margin: 0;
+            padding: 5px;
+            padding-bottom: 25px;
+
+            color: white;
+            border-radius: 25px;
+            font-size: 20px;
+
+            text-align: center;
+
+            background-color: rgba(0, 0, 0, 0.5);
+
+            transition: border-radius ease 0.3s, background-color ease 0.4s;
+
+
+        }
+
+        .about:hover {
+
+            border-radius: 20px;
+            background-color: rgba(0, 0, 0, 0.4);
+
+        }
+
+        /* ------------------------------------------------------------------------------------ */
+
+        .footer {
+
+            margin: 0;
+            bottom: 0;
+
+            width: auto;
+            height: 10%;
+        }
+
+        .footer a {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: black;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+
+        }
+
+
+        /* ------------------------------------------------------------------------------------ */
+
+        #standard {
+
+            background-image: url(img/standardWebpage.JPG);
+            background-position: center center;
+            transition: background-position ease 5s;
+            background-size:cover;
+
+            transition: border-radius ease 0.4s;
+        }
+
+        #full {
+
+            background-image: url(img/fullWebpage.JPG);
+            background-position: center center;
+            transition: background-position ease 5s;
+            background-size:cover;
+
+            transition: border-radius ease 0.4s;
+        }
+        /* ------------------------------------------------------------------------------------ */
+
+
+
+        @media only screen and (max-width: 950px) {
+
+            .websiteSaleLink a {
+
+                font-size: 55px;
+            }
+
+            .templateDisplayContainer {
+
+                flex-direction: column;
+                justify-content: flex-start;
+                height: 1100px;
+            }
+
+            .templateDisplayLabels {
+
+                width: 90%;
+                height: 80%;
+            }
+
+            .templateDisplayLabels:hover {
+
+                width: 92%;
+            }
+
+            .domainOptionsContainer {
+
+                flex-direction: column;
+                justify-content: flex-start;
+                height: 700px;
+            }
+
+            .domainOption {
+
+                width: 90%;
+                height: 45%;
+                font-size: 15px;
+            }
+
+            .hostingOptionsContainer {
+
+                height: 50%;
+            }
+
+            .hostingOption {
+
+                width: 90%;
+                height: 70%;
+                margin: 5%;
+                font-size: 15px;
+            }
+
+            .about {
+
+                font-size: 15px;
+                width: 85%;
+            }
+
+            #orderNowButton {
+
+                width: 80%;
+      
+            }
+
+            #orderNowButton:hover {
+
+                width: 85%;
+      
+            }
+
+        }
+
+        @media only screen and (max-width: 800px) {
+            .websiteSaleLink a {
+
+                font-size: 45px;
+
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .websiteSaleLink a {
+
+                font-size: 35px;
+            }
+
+            .about {
+
+                font-size: 12px;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            .websiteSaleLink a {
+
+                font-size: 25px;
+
+            }
+        }
+
+
+    </style>
+
+    <title>JJ Web Design</title>
+</head>
+
+<body onscroll="navBarChange()">
+
+    <div id="top"></div>
+
+    <div id="navBar">
+        <a href="#about"style="border-right: 0;">About</a>
+        <a href="order.html"style="border-right: 0;">Order</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <div id="headingCanvas">
+        <div class="banner">
+            <h1>JJ Web Design</h1>
+        </div>
+    </div>
+
+    <div class="websiteSaleLinkContainer">
+        <div class="websiteSaleLink"><a href="order.html">C&hairsp;l&hairsp;i&hairsp;c&hairsp;k H&hairsp;e&hairsp;r&hairsp;e F&hairsp;o&hairsp;r $&hairsp; <h2> 50 &hairsp;</h2> W&hairsp;e&hairsp;b&hairsp;s&hairsp;i&hairsp;t&hairsp;e</a></div>
+    </div>
+
+    <h1 class="header" style="margin-top:5%; margin-bottom: 0;">Website Templates</h1>
+    <p class="header">Click on one of the templates bellow to see a rough outline of what your website will look like. <br> Use the color palette to test different colorways </p>
+    <div class="templateDisplayContainer">
+        <div class="templateDisplayLabels" >
+            <div class="templateDisplay" id="standard"><p style="font-size: 40px;">Standard Webpage</p><h4><strike>$100</strike> $50</h4></div>    
+            <p>Standard single page website that is applicable to mobile devices. This template includes an about section, a section to list your services and / or products, a section where you have creative choice, and a section where a user can send you a message and / or order. </p>
+        </div>
+        <div class="templateDisplayLabels">
+            <div class="templateDisplay" id="full"><p style="font-size: 40px;">Full Webpage</p><h4><strike>$130</strike> $80</h4></div>    
+            <p>Full multi-page website that is applicable to mobile devices. This template include 3 pages, a home page with a showcase section and an about section, a page to list your services / products, and a contact page where a user can send you a message and / or order.</p>
+        </div>
+        <div class="templateDisplayLabels">
+            <div class="templateDisplay"><p style="font-size: 40px;">Personal Profile</p><h4><strike>$100</strike> $50</h4></div>    
+            <p>Coming Soon!</p>
+        </div>
+    </div>
+
+    <div class="orderNowButtonContainer">
+        <div id="orderNowButton"><h1 style="color: white;">Order Now!</h1></div>
+    </div>
+
+    <h1 class="header" style="margin: 5% 0 0 0; padding-top: 5%; border-top: 1px solid rgba(0, 0, 0, 0.8);">Hosting and Domain Options</h1>
+    <div class="domainOptionsContainer">
+        <div class="domainOption"><p style="font-size: 40px;">Already have a domain?</p><p>Awesome! easily host your new website under your registered domain or under a new subdomain.</p></div>
+        <div class="domainOption"><p style="font-size: 40px;">Need a domain?</p><p>Not a problem, fill out your desired domain name upon ordering and your domain will be added to your total price. <br> (Domain names are $20 a year, or 3 years for $45).</p></div>
+    </div>
+
+    <div class="hostingOptionsContainer">
+        <div class="hostingOption"><p style="font-size: 40px;">Hosting</p><p>Web hosting is offered at a one time payment of $20, or alternitivly you may prefer to use a third-party hosting service in which case your website files will be sent to you in a .zip file.</p></div>
+    </div>
+
+    <h1 class="header" style="margin-top:5%; margin-bottom: 0;">About JJ Web Design</h1>
+    <a id="about"></a>
+    <div class="aboutContainer">
+        <div class="about">
+            <p>JJ Web Design is a locally owned and operated business located in Parksville, BC. Founded by Vancouver Island University Computer Science Student and aspiring entrepreneur Jasper Charlinski. Based on the philosophy "the simpler the better" JJ Web Design produces simple and easy to use yet effective and efficient web pages that are usable on all device. Our webpages do not collect cookies, account information, or search history. They have one purpose, and that is to be a platform for you to display your message </p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a href="#">B&hairsp;a&hairsp;c&hairsp;k &hairsp;t&hairsp;o&hairsp; T&hairsp;o&hairsp;p</a>
+    </div>
+
+    <script src="script/navBarScript.js"></script>
+    <script>
+
+        const headingCanvas =  document.getElementById(`headingCanvas`);
+
+        headingCanvas.addEventListener(`mouseover`, () => {moveCvs(event)});
+        headingCanvas.addEventListener(`mouseleave`, () => {moveCvs(event)});
+        headingCanvas.addEventListener(`touchstart`, () => {moveCvs(event)});
+
+        function moveCvs(event) {
+
+
+            if (event.clientX > 700)
+            {
+                headingCanvas.style.backgroundPosition = `30% 40%`;
+
+            }
+
+            else if (event.clientX > 200)
+            {
+                headingCanvas.style.backgroundPosition = `50% 70%`;
+
+            }
+
+            else if (event.clientX > 50)
+            {
+                headingCanvas.style.backgroundPosition = `70% 50%`;
+
+            }
+
+            else
+            {
+                headingCanvas.style.backgroundPosition = `70% 60%`;
+
+            }
+
+        }
+
+        document.getElementById(`orderNowButton`).addEventListener(`click`, () => {window.location = `order.html`});
+        
+        document.getElementById(`standard`).addEventListener(`click`, () => {window.open(`templates/standard/index.html`, `_blank`);});
+        document.getElementById(`full`).addEventListener(`click`, () => {window.open(`templates/full/index.html`, `_blank`);});
+
+    </script>
+    
+</body>
+</html>

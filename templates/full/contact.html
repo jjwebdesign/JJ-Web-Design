@@ -1,0 +1,216 @@
+ <!-- 
+JJWebDesign
+ * /  .\   *
+ * /  =__| * 
+ * /    || *
+ * * * * * * 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&display=swap" rel="stylesheet"> 
+    <style>
+
+        .contactInfoContainer {
+        
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+
+            margin: 0 auto;
+            text-align: center;
+
+            width: 100%;
+            height: 1200px;
+
+        }
+
+        .contactInfoItem {
+        
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            width: 100%;
+            height: 50%;
+
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+        }
+
+        .contactInfoItem a {
+
+            color: black;
+            text-decoration: none;
+
+        }
+
+        .contactInfoItem a:hover {
+
+            color: rgb(38, 38, 38);
+            text-decoration: underline;
+
+        }
+
+        #inquiryTextbox {
+
+            width: 50%;
+            height: 200px;
+            padding: 0 20px;
+            resize: none;
+
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            font-size: 20px;
+            text-align: center;
+
+            scrollbar-color: rgba(86, 86, 86, 0.4) rgba(255,255,255, 0);
+            scrollbar-width: thin;
+
+            transition: border-radius ease 0.4s, width ease 0.4s;
+
+        }
+
+        #inquiryTextbox:hover {
+
+            border-radius: 2px;
+            width: 52%;
+
+        }
+
+        .emailInputContainer {
+
+            text-align: center;
+            width: 100%;
+            height: 40px;
+
+            margin: 50px 0;
+
+        }
+
+        #emailInput {
+
+            width: 30%;
+            height: 100%;
+
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(0, 0, 0, 0.3);
+
+            border-radius: 10px;
+            padding-left: 10px;
+        }
+
+        #sendMessageButton {
+
+            width: 30%;
+            height: 75px;
+
+            background-color: rgba(255, 255, 255, 0.5);
+            border: 2px solid rgba(0, 0, 0, 0.3);
+
+            border-radius: 10px;
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Montserrat', sans-serif;
+
+            transition: border-radius ease 0.4s, background-color ease 0.4s , width ease 0.4s;
+
+        }
+
+        #sendMessageButton:hover {
+
+            background-color: rgba(205, 205, 205, 0.3);
+            width: 30%;
+            border-radius: 5px;
+
+            cursor: pointer;
+        }
+
+
+
+        @media only screen and (max-width: 700px) {
+
+            #inquiryTextbox {
+
+                width: 80%;
+            }
+
+            #inquiryTextbox:hover {
+
+                width: 85%;
+            }
+
+            #sendMessageButton {
+
+                width: 80%;
+            }
+
+            #sendMessageButton:hover {
+
+                width: 85%;
+            }
+
+        }
+
+
+
+    </style>
+    <title>Standard Webpage Template</title>
+</head>
+
+<body id="body" onscroll="navBarChange()">
+    <div id="navBar">
+        <a href="index.html" style="border-right: 0;">Home</a>
+        <a href="#" style="border-right: 0;">Services</a>
+        <a href="#contactShortcut">Contact</a>
+    </div>
+    <div id="websiteBuilderMenu">
+        <div class="websiteBuilderMenuTopMenu">
+            <div class="websiteBuilderMenuTopMenuClose" id="minimizeButton" onclick="shrinkGrowMenu()"><strong>−</strong></div>
+        </div>
+        <h2 id="menuHeader">Color Palette</h2>
+        <div id="colorSelectContainer">
+            <div class="colorSelectLabel"><input type="color" id="mainColor" class="colorSelect" onchange="changeMain()"><p>Main Color</p></div>
+            <div class="colorSelectLabel"><input type="color" id="secondaryColor" class="colorSelect" onchange="changeSecondary()"><p>Secondary Color</p></div>
+            <div class="colorSelectLabel"><input type="color" id="tertiaryColor" class="colorSelect" onchange="changeTertiary()"><p>Tertiary Color</p></div>
+            <div class="colorSelectLabel"><input type="color" id="outlineColor" class="colorSelect" onchange="changeOutline()"><p>Outline Color</p></div>
+        </div>
+        <h2 id="menuHeader">Theme</h2>
+        <div class="themeSelectContainer">
+            <span>Dark: &nbsp;</span><input type="radio" name="theme" id="dark" class="themeSelect" onchange="changeTheme ()">
+            <span style="margin-left: 100px;">Light: &nbsp;</span><input type="radio" name="theme" id="light" class="themeSelect" onchange="changeTheme ()">
+        </div>
+    </div>
+    <div id="top"></div>
+    <h1 class="header" style="margin: 2% 0;">Contact</h1>
+    <hr>
+    <div class="contactInfoContainer">
+        <div class="contactInfoItem">
+            <p>Customers can send you a message bellow and it will be sent to your email</p>
+            <textarea  id="inquiryTextbox" maxlength="1000"></textarea>
+            <div class="emailInputContainer"><span><strong>Email: &nbsp;</strong></span><input type="email" id="emailInput"></div>
+            <input type="button" id="sendMessageButton" value="Send Message">
+        </div>
+        <div class="contactInfoItem" style="border: 0;">
+            <h3 class="header" style="margin: 20px 0;">Contact Information</h3>
+            <p><strong>Email: &nbsp;</strong>-------</p>
+            <p><strong>LinkedIn: &nbsp;</strong>-------</p>
+            <p><strong>GitHub: &nbsp;</strong>-------</p>
+            <p><strong>Personal Website: &nbsp;</strong>-------</p>
+        </div>
+    </div>
+    <script src="paletteScript.js"></script>
+    <script src="../../script/navBarScript.js"></script>
+</body>
+</html>

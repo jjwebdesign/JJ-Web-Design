@@ -1,0 +1,249 @@
+<!-- 
+JJWebDesign
+* /  .\   *
+* /  =__| * 
+* /    || *
+* * * * * *
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&display=swap" rel="stylesheet"> 
+    <style>
+
+        .orderConfContainer {
+
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+
+            margin: 0 auto;
+            text-align: center;
+
+            width: 100%;
+            height: 2000px;
+
+        }
+
+        .orderStyleConfContainer {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            margin: 0 auto;
+            text-align: center;
+
+            width: 100%;
+
+        }
+
+        .orderConfColorDisplay {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            margin: 2%;
+
+            width: 200px;
+            height: 200px;
+
+        }
+
+        .colorDisplay {
+
+            width: 100px;
+            height: 100px;
+            margin: 5px 0;
+            border-radius: 5px;
+
+            border: 2px solid black;
+        }
+
+        .orderConfItem {
+
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            margin: 2% 2%;
+            padding: 0 10px;
+
+            width: 50%;
+            height: 50%;
+
+        }
+
+
+        .submitButtonContainer {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            width: 100%;
+
+            margin-top: 5%;
+
+            padding: 2% 0 4% 0;
+
+        }
+
+        #submitButton {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 30%;
+            height: 50px;
+
+            background-color: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            font-size: 20px;
+            font-family: 'Montserrat', sans-serif;
+            border-radius: 30px;
+
+            transition: background-color ease 0.4s, border-radius ease 0.4s, width ease 0.4s;
+
+        }
+
+        #submitButton:hover {
+
+            background-color: rgba(0, 0, 0, 0.25);
+            border-radius: 20px;
+            width: 35%;
+            cursor: pointer;
+        }
+
+        #backButton {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 20%;
+            height: 30px;
+
+
+            margin-top: 45px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            font-size: 20px;
+            font-family: 'Montserrat', sans-serif;
+            border-radius: 30px;
+
+            transition: background-color ease 0.4s, border-radius ease 0.4s, width ease 0.4s;
+
+        }
+
+        #backButton:hover {
+
+            background-color: rgba(0, 0, 0, 0.25);
+            border-radius: 20px;
+            width: 25%;
+            cursor: pointer;
+        }
+
+
+
+    </style>
+    <title>JJ Web Design-Order-Confirmation</title>
+</head>
+
+<body onload="displayOrderConf()" onscroll="navBarChange()">
+    
+    <div id="top"></div>
+
+    <div id="navBar">
+        <a href="index.html"style="border-right: 0;">Home</a>
+        <a href="order.html"style="border-right: 0;">Order</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <h1 class="header" id="orderConfHeader" style=" width: 100%; border-bottom: 1px solid rgba(0, 0, 0, 0.3); padding: 3% 0;">Order Confirmation</h1>
+    <div class="orderConfContainer">
+
+        <div class="orderConfItem" style="margin-bottom: 0;"><strong>Template: &nbsp; </strong><p id="template"></p></div>
+
+        <div class="orderConfItem" style="margin-bottom: 0;"><strong>Theme: &nbsp; </strong><p id="theme"></p></div>
+
+        <div class="orderStyleConfContainer">
+            <div class="orderConfColorDisplay"><strong>Main Color: &nbsp; </strong><div class="colorDisplay" id="mainColor"></div></div>
+            <div class="orderConfColorDisplay"><strong>Secondary Color: &nbsp; </strong><div class="colorDisplay" id="secondaryColor"></div></div>
+            <div class="orderConfColorDisplay"><strong>Tertiary Color: &nbsp; </strong><div class="colorDisplay" id="tertiaryColor"></div></div>
+            <div class="orderConfColorDisplay"><strong>Outline Color: &nbsp; </strong><div class="colorDisplay" id="outlineColor"></div></div>    
+        </div>
+
+        <div class="orderConfItem"><strong>About: &nbsp; </strong><p id="about"></p></div>
+        <div class="orderConfItem"><strong>Service: &nbsp; </strong><p id="service"></p></div>
+        <div class="orderConfItem"><strong>Contact: &nbsp; </strong><p id="contact"></p></div>
+        <div class="orderConfItem"><strong>Custom: &nbsp; </strong><p id="custom"></p></div>
+        <div class="orderConfItem"><strong>Footer: &nbsp; </strong><p id="footer"></p></div>
+
+        <div class="orderConfItem" style="height: 10%;"><strong>Domain Option: &nbsp; </strong><p id="domain"></p></div>
+        <div class="orderConfItem" style="height: 10%;"><strong>Domain Name: &nbsp; </strong><p id="domainName"></p></div>
+        <div class="orderConfItem" style="height: 10%;"><strong>Hosting Option: &nbsp; </strong><p id="hosting"></p></div>
+
+        <div class="submitButtonContainer">
+            <input type="button" id="submitButton" value="Confirm" onclick="confirmOrder()">
+            <input type="button" id="backButton" value="Back" onclick="back()">
+        </div>
+
+    </div>
+
+    <script src="script/navBarScript.js"></script>
+
+    <script>
+
+        function displayOrderConf() {
+
+            let order = window.localStorage.getItem(`order`);
+
+            document.getElementById(`template`).innerHTML = window.localStorage.getItem(`template`);
+            document.getElementById(`theme`).innerHTML = window.localStorage.getItem(`theme`);
+            document.getElementById(`mainColor`).style.backgroundColor = window.localStorage.getItem(`mainColor`);
+            document.getElementById(`secondaryColor`).style.backgroundColor = window.localStorage.getItem(`secondaryColor`);
+            document.getElementById(`tertiaryColor`).style.backgroundColor = window.localStorage.getItem(`tertiaryColor`);
+            document.getElementById(`outlineColor`).style.backgroundColor = window.localStorage.getItem(`outlineColor`);
+            document.getElementById(`about`).innerHTML = window.localStorage.getItem(`about`);
+            document.getElementById(`service`).innerHTML = window.localStorage.getItem(`service`);
+            document.getElementById(`contact`).innerHTML = window.localStorage.getItem(`contact`);
+            document.getElementById(`custom`).innerHTML = window.localStorage.getItem(`custom`);
+            document.getElementById(`footer`).innerHTML = window.localStorage.getItem(`footer`);
+            document.getElementById(`domain`).innerHTML = window.localStorage.getItem(`domain`);
+            document.getElementById(`domainName`).innerHTML = window.localStorage.getItem(`domainName`);
+            document.getElementById(`hosting`).innerHTML = window.localStorage.getItem(`hosting`);
+        }
+
+        function confirmOrder() {
+
+            window.location = `orderSubmit.html`;
+
+        }
+
+        function back() {
+
+            history.back();
+
+        }
+
+    </script>
+
+</body>
+

@@ -1,0 +1,122 @@
+ <!-- 
+JJWebDesign
+ * /  .\   *
+ * /  =__| * 
+ * /    || *
+ * * * * * * 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&display=swap" rel="stylesheet"> 
+    <style>
+
+        .mainCanvas {
+
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+
+            width: 100%;
+            height: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .serviceLabels {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            flex-direction: column;
+
+            margin: 40px 0;
+            width: 80%;
+            height: 350px;
+            text-align: center;
+            transition: width ease 1s;
+        }
+
+        .info {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            overflow: hidden;
+
+            width: 100%;
+            height: 100%;
+            padding: 5px;
+
+            box-shadow: inset 0 0 0 100vh rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(0, 0, 0, 0.4);
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+
+        }
+
+
+
+    </style>
+    <title>Standard Webpage Template</title>
+</head>
+<body id="body" onscroll="navBarChange()">
+    <div id="navBar">
+        <a href="index.html" style="border-right: 0;">Home</a>
+        <a href="#" style="border-right: 0;">Services</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <div id="websiteBuilderMenu">
+        <div class="websiteBuilderMenuTopMenu">
+            <div class="websiteBuilderMenuTopMenuClose" id="minimizeButton" onclick="shrinkGrowMenu()"><strong>−</strong></div>
+        </div>
+        <h2 id="menuHeader">Color Palette</h2>
+        <div id="colorSelectContainer">
+            <div class="colorSelectLabel"><input type="color" id="mainColor" class="colorSelect" onchange="changeMain()"><p>Main Color</p></div>
+            <div class="colorSelectLabel"><input type="color" id="secondaryColor" class="colorSelect" onchange="changeSecondary()"><p>Secondary Color</p></div>
+            <div class="colorSelectLabel"><input type="color" id="tertiaryColor" class="colorSelect" onchange="changeTertiary()"><p>Tertiary Color</p></div>
+            <div class="colorSelectLabel"><input type="color" id="outlineColor" class="colorSelect" onchange="changeOutline()"><p>Outline Color</p></div>
+        </div>
+        <h2 id="menuHeader">Theme</h2>
+        <div class="themeSelectContainer">
+            <span>Dark: &nbsp;</span><input type="radio" name="theme" id="dark" class="themeSelect" onchange="changeTheme ()">
+            <span style="margin-left: 100px;">Light: &nbsp;</span><input type="radio" name="theme" id="light" class="themeSelect" onchange="changeTheme ()">
+        </div>
+    </div>
+    <div id="top"></div>
+    <h1 class="header">Service / Products</h1>
+    <hr>
+    <div class="mainCanvas">
+        <div class="serviceLabels">
+            <h2 style="margin: 0;">Service 1</h2>
+            <div class="info"></div>
+        </div>
+        <div class="serviceLabels">
+            <h2 style="margin: 0;">Service 2</h2>
+            <div class="info"></div>
+        </div>
+        <div class="serviceLabels">
+            <h2 style="margin: 0;">Service 3</h2>
+            <div class="info"></div>
+        </div>
+        <div class="serviceLabels">
+            <h2 style="margin: 0;">Service 4</h2>
+            <div class="info"></div>
+        </div>
+    </div>
+
+    <script src="paletteScript.js"></script>
+    <script src="../../script/navBarScript.js"></script>
+</body>
+</html>

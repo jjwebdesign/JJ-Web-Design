@@ -1,0 +1,82 @@
+body {
+
+    margin: 0;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    background-image: radial-gradient(circle at center, rgba(135, 135, 255, 0.3) 0, rgba(255, 200, 200, 0.2), rgb(254, 220, 255) 100%);
+    overflow-x: hidden;
+
+}
+
+#navBar {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    margin: 0 auto;
+
+    background-color: white;
+    text-align: center;
+    transition: height ease 0.5s, opacity ease 0.7s;
+    
+}
+
+#navBar a { 
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    width: 33.33%;
+
+    color: black;
+    text-decoration: none;
+    border: 1px solid black;
+
+    transition: background-color ease 0.7s;
+
+}
+
+#navBar a:hover { 
+
+    background-color: rgb(183, 183, 183);
+    color: black;
+    
+}
+
+#navBar a:visited { 
+
+    color: black;
+    
+
+}
+
+#navBar a:visited:hover { 
+
+    background-color: rgb(183, 183, 183);
+    color: black;
+
+}
+
+.header {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+#top {
+
+    margin: 0;
+}
+

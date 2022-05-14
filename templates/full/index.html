@@ -1,0 +1,289 @@
+ <!-- 
+JJWebDesign
+ * /  .\   *
+ * /  =__| * 
+ * /    || *
+ * * * * * * 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&display=swap" rel="stylesheet"> 
+    <style>
+
+        .mainCanvas {
+
+            width: 100%;
+            height: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .headerCanvas {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+            height: 300px;
+            margin: 0;
+            text-align: center;
+            border-bottom: 2px solid black;
+            box-shadow: inset 0 0 0 100vh rgba(255, 255, 255, 0.2);
+            font-size: 50px;
+            transition: box-shadow ease 2s, font-size ease 2s;
+        }
+
+            
+        #websiteSaleLinkContainer {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 auto;
+
+            width: 100%;
+            height: 125px;
+
+            background-color: white;
+
+            border-bottom: 2px solid black;
+
+        }
+
+        #websiteSaleLink {
+
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            transition: box-shadow ease 0.5s;
+        }
+
+        #websiteSaleLink a {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: black;
+            text-decoration: none;
+            height: 100%;
+            width: 100%;
+            font-size: 65px;
+            font-family:'PT Serif', serif;
+
+        }
+
+        .infoCanvas {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin: 0 auto;
+
+            width: 100%;
+            height: 50%;
+
+            border-bottom: 5px solid rgba(0, 0, 0);
+            overflow: hidden;
+
+            transition: width ease 1s, height ease 2s;
+        }
+
+        .info {
+
+            width: 80%;
+            height: 90%;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            transition: border-radius ease 0.4s;
+
+        }
+
+        .showcaseContainer {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+            height: 90%;
+        }
+
+        .showcase {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            overflow: hidden;
+            width: 100%;
+            height: 90%;
+            margin: 0 2%;
+            padding: 2px;
+
+            box-shadow: inset 0 0 0 100vh rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(0, 0, 0, 0.4);
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+
+            transition: border-radius ease 0.4s;
+
+        }
+
+        .showcaseLabels {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            flex-direction: column;
+
+            margin: 0 2%;
+            width: 30%;
+            height: 100%;
+            text-align: center;
+            transition: width ease 1s;
+        }
+
+        .showcaseLabels:hover {
+
+            width: 150%;
+            cursor: pointer;
+
+        }
+
+        @media only screen and (max-width: 950px) {
+
+
+            .showcaseContainer {
+
+                flex-direction: column;
+                justify-content: flex-start;
+                height: 1100px;
+            }
+
+            .showcaseLabels {
+
+                justify-content: center;
+                width: 90%;
+                height: 50%;
+
+                margin-top: 40px;
+            }
+
+            .showcaseLabels:hover {
+
+                width: 90%;
+            }
+
+            #showcaseCanvas {
+
+                height: 100%;
+            }
+
+            .headerCanvas {
+
+                font-size: 30px;
+            }
+        }
+
+    </style>
+    <title>Standard Webpage Template</title>
+</head>
+<body id="body" onscroll="navBarChange()" onload="loadSite()">
+    <div id="top"></div>
+    <div id="navBar">
+        <a href="#about" style="border-right: 0;">About</a>
+        <a href="services.html" style="border-right: 0;">Services</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <div id="websiteBuilderMenu">
+        <div class="websiteBuilderMenuTopMenu">
+            <div class="websiteBuilderMenuTopMenuClose" id="minimizeButton" onclick="shrinkGrowMenu()"><strong>−</strong></div>
+        </div>
+        <h2 id="menuHeader">Color Palette</h2>
+        <div id="colorSelectContainer">
+            <div class="colorSelectLabel"><input type="color" id="mainColor" class="colorSelect" onchange="changeMain()"><p>Main Color</p></div>
+            <div class="colorSelectLabel"><input type="color" id="secondaryColor" class="colorSelect" onchange="changeSecondary()"><p>Secondary Color</p></div>
+            <div class="colorSelectLabel"><input type="color" id="tertiaryColor" class="colorSelect" onchange="changeTertiary()"><p>Tertiary Color</p></div>
+            <div class="colorSelectLabel"><input type="color" id="outlineColor" class="colorSelect" onchange="changeOutline()"><p>Outline Color</p></div>
+        </div>
+        <h2 id="menuHeader">Theme</h2>
+        <div class="themeSelectContainer">
+            <span>Dark: &nbsp;</span><input type="radio" name="theme" id="dark" class="themeSelect" onchange="changeTheme ()">
+            <span style="margin-left: 100px;">Light: &nbsp;</span><input type="radio" name="theme" id="light" class="themeSelect" onchange="changeTheme ()" checked>
+        </div>
+    </div>
+    <div class="headerCanvas" id="websiteHeader">
+        <p>MyWebsite.com</p>
+    </div>
+    <div id="websiteSaleLinkContainer">
+        <div id="websiteSaleLink"><a href="order.html">Link or Banner</a></div>
+    </div>
+    <div class="mainCanvas" id="mainCVS">
+        <div class="infoCanvas" id="showcaseCanvas">
+            <div class="info">
+                <h1 class="header">Product / Service Showcase</h1>
+                <hr class="hr">
+                <div class="showcaseContainer">
+                    <div class="showcaseLabels">
+                        <div class="showcase"></div>
+                        <h3>Showcase 1</h3>
+                    </div>
+                    <div class="showcaseLabels">
+                        <div class="showcase"></div>
+                        <h3>Showcase 2</h3>
+                    </div>
+                    <div class="showcaseLabels">
+                        <div class="showcase"></div>
+                        <h3>Showcase 3</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a id="about"></a>
+        <div class="infoCanvas" id="about">
+            <div class="info">
+                <h1 class="header">About</h1>
+                <hr class="hr">
+                <p>This will be a section for you to write a small paragraph about your website / business</p>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footerContents">
+            <p class="footerContentsItem"><strong>Email: &nbsp;</strong>-------</p>
+            <p class="footerContentsItem"><strong>Phone: &nbsp;</strong>-------</p>
+            <p class="footerContentsItem"><strong>LinkedIn: &nbsp;</strong>-------</p>
+        </div>
+    </div>
+    <script src="paletteScript.js"></script>
+    <script src="../../script/navBarScript.js"></script>
+    <script>
+        function  loadSite(){
+
+            if (window.innerWidth > 800)
+            {
+                document.getElementById(`websiteHeader`).style.fontSize = `110px`;
+            }
+            else
+            {
+                document.getElementById(`websiteHeader`).style.fontSize = `50px`;
+            }
+
+        }
+    </script> 
+</body>
+</html>

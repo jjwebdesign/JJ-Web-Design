@@ -1,0 +1,535 @@
+<!-- 
+JJWebDesign
+* /  .\   *
+* /  =__| * 
+* /    || *
+* * * * * *
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&display=swap" rel="stylesheet"> 
+    <style>
+
+        #orderForm {
+
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+
+            margin: 0 auto;
+            text-align: center;
+
+            width: 100%;
+            height: 1500px;
+
+        }
+
+        .OrderFormElementStyle {
+
+            background-color: rgba(0, 0, 0, 0.3);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+
+            transition: border-radius ease 0.4s, background-color ease 0.4s;
+
+        }
+
+        .OrderFormElementLabel {
+
+            font-size: 20px;
+
+        }
+
+        .templateSelectContainer {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            margin: 2% 0;
+
+            height: 20%;
+            width: 100%;
+
+        }
+
+        #templateSelect {
+
+            width: 30%;
+            height: 50px;
+            margin-top: 3px;
+            font-size: 18px;
+            color: black;
+            background-color: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+
+            transition: width ease 1s, border-radius ease 0.4s, background-color ease 0.4s;
+
+
+        }
+
+        #templateSelect:hover {
+
+            background-color: rgba(0, 0, 0, 0.25);
+            border-radius: 15px;
+
+        }
+
+        #templateSelect option{
+
+            background-color: rgba(0, 0, 0, 0.3);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+
+        }
+
+        .textAreaInputContainer {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            margin-top: 50px;
+            width: 70%;
+
+            transition: width ease 1s;
+
+        }
+
+        .textAreaInput {
+
+            resize: none;
+            height: 300px;
+            width: 100%;
+            margin: 15px 0 70px 0;
+
+            background-color: rgba(255, 255, 255, 0.4);
+            border: 1px solid rgba(0, 0, 0, 0.3);
+
+        }
+
+        .styleInputContainer {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            margin: 0;
+            width: 100%;
+
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+            border-top: 1px solid rgba(0, 0, 0, 0.3);
+
+            padding: 2% 0;
+
+            transition: width ease 1s;
+
+        }
+
+        .themeSelectContainer {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            width: 80%;
+
+            margin: 2% 0;
+            
+        }
+
+        .colorSelectContainer {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            width: 80%;
+
+            margin: 2% 0;
+
+        }
+
+        .themeSelectLabel {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            margin: 0 5%;
+
+        }
+
+        .colorSelect {
+
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-direction: column;
+
+            margin: 0 3% 2% 3%;
+            width: 20%;
+            height: 200px;
+
+            transition: height ease 0.4s, width ease 0.4s;
+
+
+        }
+
+        .submitButtonContainer {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+            padding: 2% 0 4% 0;
+
+        }
+
+        #submitButton {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 30%;
+            height: 50px;
+
+            background-color: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            font-size: 20px;
+            font-family: 'Montserrat', sans-serif;
+            border-radius: 30px;
+
+            transition: background-color ease 0.4s, border-radius ease 0.4s, width ease 0.4s;
+
+        }
+
+        #submitButton:hover {
+
+            background-color: rgba(0, 0, 0, 0.25);
+            border-radius: 20px;
+            width: 35%;
+
+        }
+
+        .domainOptionsContainer {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            border-top: 1px solid rgba(0, 0, 0, 0.3);
+            padding-top: 50px;
+            margin-bottom: 10%;
+            width: 100%;
+            height: 800px;
+
+            transition: 0;
+
+        }
+
+        .domainOption {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            margin-top: 2%;
+            width: 50%;
+            height: 200px;
+
+            font-size: 20px;
+            border-radius: 25px;
+
+            background-color: rgb(0, 160, 0);
+            border: 3px solid rgba(0, 0, 0, 0.5);
+
+            transition: width ease 0.5s, border-radius ease 0.3s, background-color ease 0.5s;
+
+        }
+
+        .domainOption:hover {
+
+            border-radius: 20px;
+            width: 55%;
+            cursor: pointer;
+        }
+
+        #domainName {
+
+            width: 250px;
+            height: 30px;
+
+            background-color: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+
+        }
+
+
+        @media only screen and (max-width: 1100px) {
+            .textAreaInputContainer {
+
+                width: 90%;
+
+            }
+
+            #submitButton {
+
+                width: 80%;
+            }
+
+            #templateSelect {
+
+                width: 80%;
+            }
+
+            #submitButton:hover {
+
+                width: 90%;
+            }
+
+            .colorSelectContainer {
+
+                width: 100%;
+                height: 900px;
+                flex-direction: column;
+            }
+
+            .colorSelect {
+                justify-content: flex-start;
+
+                margin-bottom: 30px ;
+                height: 20%;
+                width: 50%;
+
+            }
+
+
+        }
+
+
+    </style>
+    <title>JJ Web Design-Order</title>
+</head>
+
+<body onscroll="navBarChange()">
+
+    <div id="top"></div>
+
+    <div id="navBar">
+        <a href="index.html"style="border-right: 0;">Home</a>
+        <a href="#"style="border-right: 0;">Order</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <form id="orderForm">
+        <div class="templateSelectContainer">
+            <span class="OrderFormElementLabel">Select Template</span>
+            <select name="templateSelect" id="templateSelect" class="OrderFormElementStyle">
+                <option value="standard">Standard Webpage</option>
+                <option value="full">Full Webpage</option>
+                <option value="personal">Personal Webpage</option>
+            </select>
+        </div>
+
+
+        <div class="styleInputContainer">
+
+            <h2 class="OrderFormElementLabel">Webpage Style</h2>
+            <span class="OrderFormElementLabel" style="margin-bottom: 40px; width: 60%;">Use the options bellow to design the style of your website</span>
+
+            <span class="OrderFormElementLabel">Select Theme</span>
+            <p>
+                A dark theme is when the background is a dark easy on the eyes color and the foreground text is white. <br>
+                A light theme is when the background is a light color and the foreground text is black.
+            </p>
+
+            <div class="themeSelectContainer" >
+                <div class="themeSelectLabel"><span>Dark</span><input type="radio" class="themeSelect" name="theme" id="dark" value="dark" checked></div>
+                <div class="themeSelectLabel"><span>Light</span><input type="radio" class="themeSelect" name="theme" id="light" value="light"></div>
+            </div>
+
+            <span class="OrderFormElementLabel" style="margin-top: 60px;">Select Colorway</span>
+            <div class="colorSelectContainer" >
+
+                <div class="colorSelect">
+                    <span class="OrderFormElementLabel">Main Color</span>
+                    <p>This will be the color that shows up the most on your webpage, pick a color that best represents your websites message.</p>
+                    <input type="color" id="mainColor" >
+                </div>
+
+                <div class="colorSelect">
+                    <span class="OrderFormElementLabel">Secondary Color</span>
+                    <p>This will be the color that shows up the second most on your webpage, pick a color that complements your main color.</p>
+                    <input type="color" id="secondaryColor">
+                </div>
+
+                <div class="colorSelect">
+                    <span class="OrderFormElementLabel">Tertiary Color</span>
+                    <p>This will be the color that shows up the third most on your webpage, pick a color that complements your secondary color.</p>
+                    <input type="color" id="tertiaryColor" >
+                </div>
+
+                <div class="colorSelect">
+                    <span class="OrderFormElementLabel">Outline Color</span>
+                    <p>This will be the color that will outline certain sections and text.</p>
+                    <input type="color" id="outlineColor">
+                </div>
+
+            </div>
+
+        </div>
+
+        
+        <h2 class="OrderFormElementLabel">Webpage Content</h2>
+        <span class="OrderFormElementLabel" style="margin-bottom: 40px; width: 60%;">Use the text boxes bellow to fill out the information for each section. <br> If you have any formatting notes or comments put them in asterisk (ex. *make this bold*)</span>
+
+        <div class="textAreaInputContainer">
+
+            <span class="OrderFormElementLabel" style="text-decoration: underline;">About</span>
+            <p>This section should be a short summary of what your website is about.</p>
+            <textarea name="about" id="about" class="textAreaInput"></textarea>
+            
+            <span class="OrderFormElementLabel" style="text-decoration: underline;">Service</span>
+            <p>This section should be a list of the services and or products you are offering, this should include a short description of the service/product as well as pricing options.</p>
+
+            <textarea name="service" id="service" class="textAreaInput"></textarea>
+
+            <span class="OrderFormElementLabel" style="text-decoration: underline;">Contact</span>
+            <p>This section should contain your desired contact information, avoid listing home addresses and personal phone numbers if possible.</p>
+
+            <textarea name="contact" id="contact" class="textAreaInput"></textarea>
+
+            <span class="OrderFormElementLabel" style="text-decoration: underline;">Custom</span>
+            <p>This section can be for what ever you think best fits. You have the choice between an order / inquiry page, a image slideshow or video, or a regular text section. If you have an idea of something else you might want let me know and I will try an make it happen!</p>
+            <textarea name="custom" id="custom" class="textAreaInput"></textarea>
+
+            <span class="OrderFormElementLabel" style="text-decoration: underline;">Footer</span>
+            <p>This section is typically used for social media links or similar information, but can be filled with anything.</p>
+            <textarea name="footer" id="footer" class="textAreaInput"></textarea>
+
+        </div>
+
+        <div class="domainOptionsContainer">
+
+            <h2 class="OrderFormElementLabel">Domain and Hosting Options</h2>
+            <span class="OrderFormElementLabel" style="margin-bottom: 40px; width: 60%;">Use the buttons bellow to select your domain options. <br> Click on the buttons to change your selection</span>
+
+            <div class="domainOption" id="domain" onclick="changeDomain()"><h3>I Need A Domain</h3></div>
+            <div id="domainNameInput" style="margin: 30px 0;"><span>Desired Domain Name: &nbsp;</span><input type="text" id="domainName"></div>
+
+            <div class="domainOption" id="hosting" onclick="changeHosting()"><h3>I Need Hosting</h3></div>
+
+        </div>
+
+        <span class="OrderFormElementLabel">All Done?</span>
+
+        <div class="submitButtonContainer"><input type="button" id="submitButton" value="Submit" onclick="formatOrder()"></div>
+        
+    </form>
+
+    <script src="script/navBarScript.js"></script>
+
+    <script>
+
+        window.localStorage.setItem(`domain`, `I Need A Domain`);
+        window.localStorage.setItem(`hosting`, `I Need Hosting`);
+
+        function changeDomain() {
+
+            if (window.localStorage.getItem(`domain`) == `I Need A Domain`)
+            {
+                document.getElementById(`domain`).style.backgroundColor = `red`;
+                document.getElementById(`domain`).innerHTML = `<h3>I Don't Need A Domain</h3>`;
+                document.getElementById(`domainNameInput`).innerHTML = ``;
+                window.localStorage.setItem(`domain`, `I Don't Need A Domain`);
+            }
+            else
+            {
+                document.getElementById(`domain`).style.backgroundColor = `rgb(0, 160, 0)`;
+                document.getElementById(`domain`).innerHTML = `<h3>I Need A Domain</h3>`;
+                document.getElementById(`domainNameInput`).innerHTML = `<span>Desired Domain Name: &nbsp;</span><input type="text" id="domainName">`;
+                window.localStorage.setItem(`domain`, `I Need A Domain`);
+            }
+
+        }
+
+        function changeHosting() {
+
+            if (window.localStorage.getItem(`hosting`) == `I Need Hosting`)
+            {
+                document.getElementById(`hosting`).style.backgroundColor = `red`;
+                document.getElementById(`hosting`).innerHTML = `<h3>I Don't Need Hosting</h3>`;
+                window.localStorage.setItem(`hosting`, `I Don't Need Hosting`);
+            }
+            else
+            {
+                document.getElementById(`hosting`).style.backgroundColor = `rgb(0, 160, 0)`;
+                document.getElementById(`hosting`).innerHTML = `<h3>I Need Hosting</h3>`;
+                window.localStorage.setItem(`hosting`, `I Need Hosting`);
+            }
+
+        }
+
+
+        function formatOrder () {
+
+
+           if (document.getElementById(`dark`).checked)
+            {
+                window.localStorage.setItem(`theme`, `Dark`);
+            }
+            else
+            {
+                window.localStorage.setItem(`theme`, `Light`);
+            }
+
+            window.localStorage.setItem(`template`, document.getElementById(`templateSelect`).value);
+            window.localStorage.setItem(`mainColor`, document.getElementById(`mainColor`).value);
+            window.localStorage.setItem(`secondaryColor`, document.getElementById(`secondaryColor`).value);
+            window.localStorage.setItem(`tertiaryColor`, document.getElementById(`tertiaryColor`).value);
+            window.localStorage.setItem(`outlineColor`, document.getElementById(`outlineColor`).value);
+            window.localStorage.setItem(`about`, document.getElementById(`about`).value);
+            window.localStorage.setItem(`service`, document.getElementById(`service`).value);
+            window.localStorage.setItem(`contact`, document.getElementById(`contact`).value);
+            window.localStorage.setItem(`custom`, document.getElementById(`custom`).value);
+            window.localStorage.setItem(`footer`, document.getElementById(`footer`).value);
+
+            if (window.localStorage.getItem(`domain`) == `I Need A Domain`)
+            {
+                window.localStorage.setItem(`domainName`, document.getElementById(`domainName`).value);
+
+            }
+            else
+            {
+                window.localStorage.setItem(`domainName`, `N/A`);
+            }
+
+            window.location = `orderConf.html`;
+
+        }
+
+    </script>
+
+</body>
