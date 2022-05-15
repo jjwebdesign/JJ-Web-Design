@@ -11,6 +11,7 @@ function submitOrder() {
     let fromEmail  = document.getElementById(`email`).value;
     let fromPhone  = document.getElementById(`phone`).value;
     let name  = document.getElementById(`name`).value;
+    let comments = document.getElementById(`additionalInfo`).value;
     let pMethod;
 
     if ((fromEmail == ``) || (fromPhone == ``) || (name == ``))
@@ -34,6 +35,7 @@ function submitOrder() {
         email: fromEmail,
         phone: fromPhone,
         method: pMethod,
+        comments: comments,
         template: window.localStorage.getItem(`template`),
         theme: window.localStorage.getItem(`theme`),
         mainColor: window.localStorage.getItem(`mainColor`),

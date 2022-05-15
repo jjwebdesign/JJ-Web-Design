@@ -28,7 +28,7 @@ JJWebDesign
             flex-direction: column;
             
             width: 100%;
-            height: 800px;
+            height: 1350px;
 
         }
 
@@ -115,6 +115,33 @@ JJWebDesign
 
         }
 
+        #additionalInfo {
+
+            width: 25%;
+            height: 350px;
+            padding: 0 20px;
+            resize: none;
+
+            background-color: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            font-size: 20px;
+            text-align: center;
+
+            scrollbar-color: rgba(86, 86, 86, 0.4) rgba(255,255,255, 0);
+            scrollbar-width: thin;
+
+            transition: border-radius ease 0.4s, width ease 0.4s;
+
+        }
+
+        #additionalInfo:hover {
+
+            border-radius: 2px;
+            width: 30%;
+
+        }
+
         @media only screen and (max-width: 700px) {
 
             .customerInfo {
@@ -140,6 +167,16 @@ JJWebDesign
             #submitButton:hover {
 
                 width: 90%;
+            }
+
+            #additionalInfo {
+
+                width: 70%;
+            }
+
+            #additionalInfo:hover {
+
+                width: 75%;
             }
 
         }
@@ -168,13 +205,15 @@ JJWebDesign
         <div class="customerInfo"><strong style="margin-right: 5px;">Email: </strong><input class="customerInfoInput" type="email" id="email" required><input type="radio" name="preferredMethod" id="pEmail" checked><span>Preferred Method</span></div>
         <div class="customerInfo"><strong style="margin-right: 5px;">Phone: </strong><input class="customerInfoInput" type="phone" id="phone" required><input type="radio" name="preferredMethod" id="pPhone" ><span>Preferred Method</span></div>
 
+        <p style="margin-top: 55px;">Leave any additional comments below.</p>
+        <textarea id="additionalInfo" ></textarea>
+
         <div class="submitButtonContainer"><input type="button" id="submitButton" value="Submit Order" onclick="submitOrder()"></div>
         <span style="width: 80%; padding-bottom: 100px; text-align: center;">Upon receiving your order submission, I will get in touch with you by your preferred contact method to discuss further details.</span>
 
     </div>
 
     <script>
-
         function calculatePrice () {
 
             let websiteCost;
