@@ -13,7 +13,7 @@ function sendMessage() {
 
     if ((fromEmail == ``))
     {
-        alert(`Email Can not be left blank`);
+        alert(`Email can not be left blank`);
         return;
     }
 
