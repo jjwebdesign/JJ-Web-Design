@@ -24,12 +24,14 @@ body{
 
 #websiteBuilderMenu {
 
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8);
     color: black;
     border: 2px solid rgba(0, 0, 0, 0.8);
     position: fixed;
     width: 550px;
     height: 400px;
+    left: 33%;
+    top: 50px;
     cursor: grab;
     z-index: 2;
     overflow: hidden;

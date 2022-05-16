@@ -50,6 +50,6 @@ function submitOrder() {
         hosting: window.localStorage.getItem(`hosting`)
     };
 
-    emailjs.send(`service_wmebdr5`, `template_f8aq32g`, contents).then(function() {alert(`Order Submitted`)});
+    emailjs.send(`service_wmebdr5`, `template_f8aq32g`, contents).then(function() {alert(`Order Submitted`); window.location = `orderSubmitted.html`;});
 
 }

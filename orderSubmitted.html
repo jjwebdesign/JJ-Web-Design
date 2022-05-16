@@ -1,0 +1,98 @@
+<!-- 
+JJWebDesign
+* /  .\   *
+* /  =__| * 
+* /    || *
+* * * * * *
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet"> 
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Poppins:wght@300&display=swap" rel="stylesheet"> 
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"> </script>
+     <style>
+ 
+         .orderSubmittedContainer {
+ 
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+
+            width: 100%;
+            height: 550px;
+            margin-top: 75px;
+
+            text-align: center;
+ 
+         }
+
+         #backHomeButton {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 50%;
+            height: 100px;
+            margin-top: 50px;
+
+            background-color: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            font-size: 20px;
+            font-family: 'Montserrat', sans-serif;
+            border-radius: 30px;
+
+            transition: background-color ease 0.4s, border-radius ease 0.4s, width ease 0.4s;
+
+         }
+
+         #backHomeButton:hover {
+
+            width: 60%;
+            border-radius: 20px;
+            background-color: rgba(0, 0, 0, 0.1);
+
+         }
+ 
+     </style>
+     <title>JJ Web Design-Order-Submit</title>
+ </head>
+ 
+ <body onload="calculatePrice()" onscroll="navBarChange()">
+ 
+     <div id="top"></div>
+ 
+     <div id="navBar">
+         <a href="index.html"style="border-right: 0;">Home</a>
+         <a href="order.html"style="border-right: 0;">Order</a>
+         <a href="contact.html">Contact</a>
+     </div>
+ 
+     <div class="orderSubmittedContainer">
+        <h1 class="header">Order Received</h1>
+        <p style="margin-top: 50px; line-height: 2;">Thank you! <br>Your order has been placed, expect to receive a message regarding further details within the next 48 hours.</p>
+        <input type="button" id="backHomeButton" value="Back Home" onclick="backHome()">
+     </div>
+
+     <script>
+
+         function backHome () {
+
+            window.location = `index.html`;
+         }
+         
+     </script>
+
+  
+ </body>
+ 
+ 
