@@ -47,6 +47,7 @@ function submitOrder() {
         contact: window.localStorage.getItem(`contact`),
         custom: window.localStorage.getItem(`custom`),
         domain: window.localStorage.getItem(`domain`),
+        domainName: window.localStorage.getItem(`domainName`),
         hosting: window.localStorage.getItem(`hosting`)
     };
 
