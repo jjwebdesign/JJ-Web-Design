@@ -36,7 +36,7 @@ body{
     z-index: 2;
     overflow: hidden;
 
-    transition: height ease 0.4s, width ease 0.4s;
+    transition: height ease 0.4s, width ease 0.4s, opacity ease 1s;
 }
 
 .websiteBuilderMenuTopMenu {
@@ -238,6 +238,7 @@ body{
 
         width: 0;
         height: 0;
+        opacity: 0;
     }
 
 }
