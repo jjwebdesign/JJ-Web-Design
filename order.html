@@ -554,8 +554,14 @@ JJWebDesign
 
             if (window.localStorage.getItem(`domain`) == `I Need A Domain`)
             {
-                window.localStorage.setItem(`domainName`, document.getElementById(`domainName`).value);
-
+                if (document.getElementById(`domainName`).value == ``)
+                {
+                    window.localStorage.setItem(`domainName`, `none given`);
+                }
+                else
+                {
+                    window.localStorage.setItem(`domainName`, document.getElementById(`domainName`).value);
+                }
             }
             else
             {
