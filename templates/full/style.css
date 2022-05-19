@@ -74,13 +74,14 @@ body{
     transition: background-color ease 0.4s;
 }
 
+
 .websiteBuilderMenuTopMenuClose:hover {
 
     background-color: rgb(255, 155, 155);
     cursor: pointer;
 }
 
-#menuHeader {
+.menuHeader {
 
     text-align: center;
     margin: 20px 0 0 0;
@@ -241,9 +242,30 @@ body{
 
     #websiteBuilderMenu {
 
-        width: 0;
-        height: 0;
-        opacity: 0;
+        width: 350px;
+        height: 250px;
+    }
+
+    #colorSelectContainer {
+
+        height: 100px;
+    }
+
+    .colorSelectLabel {
+
+        font-size: 10px;
+    }
+
+    .menuHeader {
+
+        font-size: 15px;
+        margin-top: 10px;
+    }
+
+    .colorSelect {
+
+        width: 65px;
+        height: 65px;
     }
 
     #navBar {

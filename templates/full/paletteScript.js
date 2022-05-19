@@ -47,14 +47,20 @@ function shrinkGrowMenu () {
         menu.style.height = `35px`;
         menu.style.width = `200px`;
         minimizeButton.innerHTML = `<strong>+</strong>`;
-
-
     }
     else
     {
+        minimizeButton.innerHTML = `<strong>−</strong>`
+
+        if (window.innerWidth < 800)
+        {
+            menu.style.height = `250px`;
+            menu.style.width = `350px`;
+            return;
+        }
+
         menu.style.height = `400px`;
         menu.style.width = `550px`;
-        minimizeButton.innerHTML = `<strong>−</strong>`
     }
 }
 
@@ -86,6 +92,7 @@ function changeTheme () {
     }
 }
 
+
 function onLoad () {
 
     document.getElementById(`mainColor`).value = window.localStorage.getItem(`mainColor`);
@@ -104,7 +111,6 @@ function onLoad () {
     console.log(`* /    || *`)
     console.log(`* * * * * *`)
 }
-
 
 function changeMain () {
 
