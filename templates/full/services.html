@@ -71,7 +71,6 @@ JJWebDesign
             align-items: flex-start;
             justify-content: center;
             flex-wrap: wrap;
-            overflow: hidden;
 
             width: 80%;
             height: 800px;
@@ -97,12 +96,23 @@ JJWebDesign
             border: 1px solid rgba(0, 0, 0, 0.4);
         }
 
+        @media only screen and (max-width: 950px) {
+
+
+            .galleryContainer {
+
+                height: 1400px;
+                overflow-y: scroll;
+                scrollbar-width: thin;
+            }
+        }
+
 
 
     </style>
     <title>Standard Webpage Template</title>
 </head>
-<body id="body" onscroll="navBarChange()">
+<body id="body" onscroll="navBarChange()" onload="onLoad()">
     <div id="navBar">
         <a href="index.html" style="border-right: 0;">Home</a>
         <a href="#" style="border-right: 0;">Service / Products</a>

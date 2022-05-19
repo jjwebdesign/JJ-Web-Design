@@ -99,7 +99,7 @@ JJWebDesign
 
         }
 
-        #emailInput {
+        .emailPhoneInput {
 
             width: 30%;
             height: 100%;
@@ -168,7 +168,7 @@ JJWebDesign
     <title>Standard Webpage Template</title>
 </head>
 
-<body id="body" onscroll="navBarChange()">
+<body id="body" onscroll="navBarChange()" onload="onLoad()">
     <div id="navBar">
         <a href="index.html" style="border-right: 0;">Home</a>
         <a href="services.html" style="border-right: 0;">Service / Products</a>
@@ -193,14 +193,14 @@ JJWebDesign
     </div>
     <div id="top"></div>
     <h1 class="header" style="margin: 2% 0;">Contact</h1>
-    <hr>
+    <hr class="hr">
     <div class="contactInfoContainer">
         <div class="contactInfoItem">
             <p>Customers can send you a message to your email through your website. <br>This form can be altered to best fit your needs.</p>
             <textarea  id="inquiryTextbox" maxlength="1000"></textarea>
-            <div class="emailInputContainer"><span><strong>Name: &nbsp;</strong></span><input type="email" id="emailInput"></div>
-            <div class="emailInputContainer"><span><strong>Email: &nbsp;</strong></span><input type="email" id="emailInput"></div>
-            <div class="emailInputContainer"><span><strong>Phone: &nbsp;</strong></span><input type="email" id="emailInput"></div>
+            <div class="emailInputContainer"><span><strong>Name: &nbsp;</strong></span><input type="email" id="nameInput" class="emailPhoneInput"></div>
+            <div class="emailInputContainer"><span><strong>Email: &nbsp;</strong></span><input type="email" id="emailInput" class="emailPhoneInput"></div>
+            <div class="emailInputContainer"><span><strong>Phone: &nbsp;</strong></span><input type="email" id="phoneInput" class="emailPhoneInput"></div>
             <input type="button" id="sendMessageButton" value="Send Message">
         </div>
         <div class="contactInfoItem" style="border: 0;">
