@@ -5,15 +5,13 @@
 // * * * * * *
 
 document.getElementById(`websiteBuilderMenu`).addEventListener(`mousedown`, mousedown);
-document.getElementById(`websiteBuilderMenu`).addEventListener(`touchstart`, mousedown);
+document.getElementById(`websiteBuilderMenu`).addEventListener(`touchstart`, touchstart);
 function mousedown(e) {
     
     let menu = document.getElementById(`websiteBuilderMenu`);
 
     window.addEventListener(`mouseup`, mouseup);
-    window.addEventListener(`touchend`, fingerUp);
     window.addEventListener(`mousemove`, mousemove);
-    window.addEventListener(`touchmove`, mousemove);
 
     let prevX = e.clientX;
     let prevY = e.clientY;
@@ -37,9 +35,36 @@ function mousedown(e) {
         window.removeEventListener(`mousemove`, mousemove);
     }
 
-    function fingerUp(e) {
+}
 
-        window.removeEventListener(`touchmove`, mousemove);
+function touchstart(e) {
+    
+    console.log(`touch`)
+    let menu = document.getElementById(`websiteBuilderMenu`);
+
+    window.addEventListener(`touchend`, touchend);
+    window.addEventListener(`touchmove`, touchmove);
+
+    let prevX = e.clientX;
+    let prevY = e.clientY;
+
+    function touchmove(e) {
+
+        let newX = prevX - e.clientX;
+        let newY =  prevY - e.clientY;
+
+        const rect = menu.getBoundingClientRect();
+
+        menu.style.left = rect.left - newX + `px`;
+        menu.style.top = rect.top - newY + `px`;
+
+        prevX = e.clientX;
+        prevY = e.clientY;
+    }
+
+    function touchend(e) {
+
+        window.removeEventListener(`touchmove`, touchmove);
     }
 
 }
@@ -71,6 +96,27 @@ function shrinkGrowMenu () {
     }
 }
 
+
+function onLoad () {
+
+    document.getElementById(`mainColor`).value = window.localStorage.getItem(`mainColor`);
+    document.getElementById(`secondaryColor`).value = window.localStorage.getItem(`secondaryColor`);
+    document.getElementById(`tertiaryColor`).value = window.localStorage.getItem(`tertiaryColor`);
+    document.getElementById(`outlineColor`).value = window.localStorage.getItem(`outlineColor`);
+
+    changeTheme ()
+    changeMain()
+    changeSecondary()
+    changeTertiary()
+    changeOutline()
+
+    console.log(`JJWebDesign`)
+    console.log(`* /  .\\   *`)
+    console.log(`* /  =__| *`)
+    console.log(`* /    || *`)
+    console.log(`* * * * * *`)
+}
+
 let backgroundBase = `#ffffff`;
 function changeTheme () {
 
@@ -97,26 +143,6 @@ function changeTheme () {
             navLinks[i].style.color = `black`
         }
     }
-}
-
-
-function onLoad () {
-
-    document.getElementById(`mainColor`).value = window.localStorage.getItem(`mainColor`);
-    document.getElementById(`secondaryColor`).value = window.localStorage.getItem(`secondaryColor`);
-    document.getElementById(`tertiaryColor`).value = window.localStorage.getItem(`tertiaryColor`);
-    document.getElementById(`outlineColor`).value = window.localStorage.getItem(`outlineColor`);
-
-    changeMain()
-    changeSecondary()
-    changeTertiary()
-    changeOutline()
-
-    console.log(`JJWebDesign`)
-    console.log(`* /  .\\   *`)
-    console.log(`* /  =__| *`)
-    console.log(`* /    || *`)
-    console.log(`* * * * * *`)
 }
 
 function changeMain () {
