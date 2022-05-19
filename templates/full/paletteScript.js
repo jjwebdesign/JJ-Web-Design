@@ -5,12 +5,15 @@
 // * * * * * *
 
 document.getElementById(`websiteBuilderMenu`).addEventListener(`mousedown`, mousedown);
+document.getElementById(`websiteBuilderMenu`).addEventListener(`touchstart`, mousedown);
 function mousedown(e) {
     
     let menu = document.getElementById(`websiteBuilderMenu`);
 
     window.addEventListener(`mouseup`, mouseup);
+    window.addEventListener(`touchend`, fingerUp);
     window.addEventListener(`mousemove`, mousemove);
+    window.addEventListener(`touchmove`, mousemove);
 
     let prevX = e.clientX;
     let prevY = e.clientY;
@@ -32,7 +35,11 @@ function mousedown(e) {
     function mouseup(e) {
 
         window.removeEventListener(`mousemove`, mousemove);
+    }
 
+    function fingerUp(e) {
+
+        window.removeEventListener(`touchmove`, mousemove);
     }
 
 }
