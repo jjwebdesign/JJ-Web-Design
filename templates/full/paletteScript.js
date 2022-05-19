@@ -5,7 +5,6 @@
 // * * * * * *
 
 document.getElementById(`websiteBuilderMenu`).addEventListener(`mousedown`, mousedown);
-document.getElementById(`websiteBuilderMenu`).addEventListener(`touchstart`, touchstart);
 function mousedown(e) {
     
     let menu = document.getElementById(`websiteBuilderMenu`);
@@ -37,37 +36,17 @@ function mousedown(e) {
 
 }
 
-function touchstart(e) {
-    
-    console.log(`touch`)
+document.getElementById(`websiteBuilderMenu`).addEventListener(`touchmove`, function (e) {
+
     let menu = document.getElementById(`websiteBuilderMenu`);
+    
+    let touchLocation = e.targetTouches[0];
+    
+    menu.style.left = touchLocation.pageX + `px`;
+    menu.style.top = touchLocation.pageY + `px`;
+});
 
-    window.addEventListener(`touchend`, touchend);
-    window.addEventListener(`touchmove`, touchmove);
 
-    let prevX = e.clientX;
-    let prevY = e.clientY;
-
-    function touchmove(e) {
-
-        let newX = prevX - e.clientX;
-        let newY =  prevY - e.clientY;
-
-        const rect = menu.getBoundingClientRect();
-
-        menu.style.left = rect.left - newX + `px`;
-        menu.style.top = rect.top - newY + `px`;
-
-        prevX = e.clientX;
-        prevY = e.clientY;
-    }
-
-    function touchend(e) {
-
-        window.removeEventListener(`touchmove`, touchmove);
-    }
-
-}
 
 function shrinkGrowMenu () {
 
