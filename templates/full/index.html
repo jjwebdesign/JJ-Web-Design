@@ -1,5 +1,5 @@
  <!-- 
-JJWebDesign
+~=>@JJWEB<=~
  * /  .\   *
  * /  =__| * 
  * /    || *
@@ -214,6 +214,7 @@ JJWebDesign
         <a href="services.html" style="border-right: 0;">Service / Products</a>
         <a href="contact.html">Contact</a>
     </div>
+
     <div id="websiteBuilderMenu">
         <div class="websiteBuilderMenuTopMenu">
             <div class="websiteBuilderMenuTopMenuClose" id="minimizeButton" onclick="shrinkGrowMenu()"><strong>−</strong></div>
@@ -227,10 +228,10 @@ JJWebDesign
         </div>
         <h2 class="menuHeader">Theme</h2>
         <div class="themeSelectContainer">
-            <span>Dark: &nbsp;</span><input type="radio" name="theme" id="dark" class="themeSelect" onchange="changeTheme ()" checked>
-            <span style="margin-left: 100px;">Light: &nbsp;</span><input type="radio" name="theme" id="light" class="themeSelect" onchange="changeTheme ()" >
+            <input type="range" id="backgroundLight" name="points" min="0" max="255">
         </div>
     </div>
+    
     <div class="headerCanvas" id="websiteHeader">
         <p>MyWebsite.com</p>
     </div>

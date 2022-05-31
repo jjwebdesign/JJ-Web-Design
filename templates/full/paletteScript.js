@@ -1,14 +1,19 @@
-// JJWebDesign
+//~=>@JJWEB<=~
 // * /  .\   *
 // * /  =__| * 
 // * /    || *
 // * * * * * *
 
-document.getElementById(`websiteBuilderMenu`).addEventListener(`mousedown`, mousedown);
+const websiteBuilderMenu = document.getElementById(`websiteBuilderMenu`);
+websiteBuilderMenu.addEventListener(`mousedown`, mousedown);
+
+const backlight = document.getElementById(`backgroundLight`);
+backlight.addEventListener(`mouseover`, function () {websiteBuilderMenu.removeEventListener(`mousedown`, mousedown)});
+backlight.addEventListener(`mouseleave`, function () {websiteBuilderMenu.addEventListener(`mousedown`, mousedown)});
+backlight.addEventListener(`input`, changeTheme);
+
 function mousedown(e) {
     
-    let menu = document.getElementById(`websiteBuilderMenu`);
-
     window.addEventListener(`mouseup`, mouseup);
     window.addEventListener(`mousemove`, mousemove);
 
@@ -20,10 +25,10 @@ function mousedown(e) {
         let newX = prevX - e.clientX;
         let newY =  prevY - e.clientY;
 
-        const rect = menu.getBoundingClientRect();
+        const rect = websiteBuilderMenu.getBoundingClientRect();
 
-        menu.style.left = rect.left - newX + `px`;
-        menu.style.top = rect.top - newY + `px`;
+        websiteBuilderMenu.style.left = rect.left - newX + `px`;
+        websiteBuilderMenu.style.top = rect.top - newY + `px`;
 
         prevX = e.clientX;
         prevY = e.clientY;
@@ -36,27 +41,23 @@ function mousedown(e) {
 
 }
 
-document.getElementById(`websiteBuilderMenu`).addEventListener(`touchmove`, function (e) {
-
-    let menu = document.getElementById(`websiteBuilderMenu`);
+websiteBuilderMenu.addEventListener(`touchmove`, function (e) {
     
     let touchLocation = e.targetTouches[0];
     
-    menu.style.left = touchLocation.pageX + `px`;
-    menu.style.top = touchLocation.pageY + `px`;
+    websiteBuilderMenu.style.left = touchLocation.pageX + `px`;
+    websiteBuilderMenu.style.top = touchLocation.pageY + `px`;
 });
-
 
 
 function shrinkGrowMenu () {
 
-    let menu = document.getElementById(`websiteBuilderMenu`);
     let minimizeButton = document.getElementById(`minimizeButton`);
 
     if (minimizeButton.innerHTML == `<strong>−</strong>`)
     {
-        menu.style.height = `35px`;
-        menu.style.width = `200px`;
+        websiteBuilderMenu.style.height = `35px`;
+        websiteBuilderMenu.style.width = `200px`;
         minimizeButton.innerHTML = `<strong>+</strong>`;
     }
     else
@@ -65,13 +66,13 @@ function shrinkGrowMenu () {
 
         if (window.innerWidth < 800)
         {
-            menu.style.height = `250px`;
-            menu.style.width = `350px`;
+            websiteBuilderMenu.style.height = `250px`;
+            websiteBuilderMenu.style.width = `350px`;
             return;
         }
 
-        menu.style.height = `400px`;
-        menu.style.width = `550px`;
+        websiteBuilderMenu.style.height = `400px`;
+        websiteBuilderMenu.style.width = `550px`;
     }
 }
 
@@ -89,46 +90,46 @@ function onLoad () {
     changeTertiary()
     changeOutline()
 
-    console.log(`JJWebDesign`)
+    console.log(`~=>@JJWEB<=~`)
     console.log(`* /  .\\   *`)
     console.log(`* /  =__| *`)
     console.log(`* /    || *`)
     console.log(`* * * * * *`)
 }
 
-let backgroundBase = `#ffffff`;
 function changeTheme () {
 
-    if (document.getElementById(`dark`).checked)
-    {
-        document.getElementById(`body`).style.color = `white`;
-        backgroundBase = `#000000`;
-        changeMain();
-        let navLinks = document.getElementById(`navBar`).querySelectorAll(`a`);
-        for (let i=0; i < navLinks.length; i++)
-        {
-            navLinks[i].style.color = `white`
-        }
+    let backlightValue = backlight.value;
+    let textColor;
 
+    if (backlightValue > 125)
+    {
+        textColor = `black`;
     }
     else
     {
-        document.getElementById(`body`).style.color = `black`;
-        backgroundBase = `#ffffff`;
-        changeMain();
-        let navLinks = document.getElementById(`navBar`).querySelectorAll(`a`);
-        for (let i=0; i < navLinks.length; i++)
-        {
-            navLinks[i].style.color = `black`
-        }
+        textColor = `white`
     }
+
+    document.getElementById(`body`).style.color = textColor;
+
+    let navLinks = document.getElementById(`navBar`).querySelectorAll(`a`);
+    for (let i=0; i < navLinks.length; i++)
+    {
+        navLinks[i].style.color = textColor;
+
+        document.getElementById(`body`).style.background = `radial-gradient(circle at center, `+ `rgb(` + backlightValue + `, ` + backlightValue + `, ` + backlightValue + `)` + `, ` + document.getElementById(`mainColor`).value + `)`;
+
+    }
+
 }
 
 function changeMain () {
 
     window.localStorage.setItem(`mainColor`, document.getElementById(`mainColor`).value);
 
-    document.getElementById(`body`).style.background = `radial-gradient(circle at center, `+ backgroundBase + `, ` + document.getElementById(`mainColor`).value + `)`;
+    changeTheme();
+
 }
 
 function changeSecondary () {
