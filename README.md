@@ -1,5 +1,5 @@
 <h1 align="center">JJ Web Design Service</h1>
-<h3>Visit JJ Web Design Service at <b><a href="https://jjweb.ca">jjweb.ca</a></b></h3>
+<h3 align="center">Visit JJ Web Design Service at <b><a href="https://jjweb.ca">jjweb.ca</a></b></h3>
 <br/>
 
 
@@ -13,4 +13,4 @@
 <br/>
 <p>At JJ Web Design Service, we value our customers and are committed to providing the best possible experience. If you have any questions or issues with our service, please do not hesitate to contact us via the JSEmail service, and we will be happy to assist you promptly.</p>
 <br/>
-<p><b>Please note<b> that all content and design elements on our website are the property of JJ Web Design Service and may not be reproduced or used without our consent.</p>
+<p><b>Please note</b> that all content and design elements on our website are the property of JJ Web Design Service and may not be reproduced or used without our consent.</p>
