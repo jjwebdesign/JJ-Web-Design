@@ -1,5 +1,5 @@
 <h1 align="center">JJ Web Design Service</h1>
-<h3 align="center">Visit JJ Web Design Service at <b><a href="https://jjweb.ca">jjweb.ca</a></b></h3>
+<h3 align="center">Visit JJ Web Design Service at <h2><a href="https://jjweb.ca">jjweb.ca</a></h2></h3>
 <br/>
 
 
